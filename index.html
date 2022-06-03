@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Cumpleaños Loquita</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Lato:wght@900&display=swap');
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+    .bg {
+      width: 100%;
+      min-height: 100%;
+      background: url('images/fondo.jpg');
+      background-position: center;
+      background-size: cover;
+    }
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    h1 {
+      text-align: center;
+      font-size: 80px;
+      font-family: 'Fredericka the Great', cursive;
+      animation: spin-letters 5s linear 1;
+    }
+  
+    @keyframes spin-letters {
+      0%, 10% {
+        opacity: 0;
+        transform: rotateY(90deg);
+      }
+      30% {
+        opacity: 1;
+      }
+      70%, 86% {
+        transform: rotateY(0);
+        opacity: 1;
+      }
+      95%, 100% {
+        opacity: 0;
+      }
+    }
+
+    #count {
+      background: white;
+      padding: 30px 50px;
+      font-size: 70px;
+      margin: 0px;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .content-regalos {
+      margin: 60px auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr ;
+      grid-gap: 40px;
+     
+    }
+
+    .content-regalos div {
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+      border-radius: 3px;
+      text-align: center;
+      width: 200px;
+      height: 80px;
+      margin: auto;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: #4c007d;
+      background-color: #dac9df;
+     }
+
+     .content-regalos div:hover {
+      background: -webkit-linear-gradient(left, orange , yellow, green, cyan, blue, violet);
+      background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+      background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+      background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 40px;
+     }
+
+    @media only screen and (max-width: 600px) {
+      h1 {
+        font-size: 40px;
+        margin: 30px;
+      }
+      #count{
+        font-size: 30px;
+      }
+
+      .content-regalos {
+        display: contents;
+      }
+
+      .content-regalos div {
+        margin: 30px auto;
+        height: 60px;
+      }
+    }
+      
+  </style>
+</head>
+
+
+<body>
+  <div class="bg">
+    <div class="content">
+      <h1>¡Comenzo la cuenta regresiva!</h1>
+    </div>
+
+    <div class="content">
+      <p  id="count"></p>
+    </div>
+
+    <div class="content-regalos">
+      <div onclick="openLunes()">
+        Lunes
+      </div>
+      <div onclick="openMartes()">
+        Martes
+      </div>
+      <div onclick="openMiercoles()">
+        Miercoles
+      </div>
+      <div onclick="openJueves()">
+        Jueves
+      </div>
+      <div onclick="openViernes()">
+        Viernes
+      </div>
+      <div onclick="openSabado()">
+        Sábado
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js"></script>
+  <script>
+
+    
+
+    $('#count').countdown('2022/06/11 00:00:00', function(event) {
+      $(this).html(event.strftime('%D : %H : %M : %S'));
+    });
+
+    function openLunes() {
+      alert('Lunes se inicia la semana cumpleañera xD, atenta las primeras horas del día.')
+    }
+    function openMartes() {
+      alert('Martes de cine (recuerdo que eran los días mas baratos), nunca hemos ido al cine asi que podria ser buen motivo. Ahora si no tienes tiempo puedes canjear esta salida al cine por bowling el día que puedas (Valido hasta fin de mes xD y si no quieren ni cine ni bowling tu decides a donde quisieras ir).')
+    }
+    function openMiercoles() {
+      alert('Miercoles de KFC, ahora puedes elegir Popeyes y bueno si quieres salir salimos a comer si no, delivery no hay problema solo no olvides confirmarme la hora para pedirte el delivery.')
+    }
+    function openJueves() {
+      alert('Jueves ya cerca al fin de semana :), atenta durante el día.')
+    }
+    function openViernes() {
+      alert('Viernes, seguro ya tienes planes asi que nada este día puedes canjearlo por shopping de outfit de invierno y podemos ir el dia que tu quieras y puedas (Valido hasta fines de Julio xD).')
+    }
+    function openSabado() {
+      alert('Día de concierto, este día puedo ir a recogerte todo depende de tí :D')
+    }
+
+   </script>
+</body>
+</html>
